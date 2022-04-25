@@ -1,6 +1,6 @@
 dist/
 build/
-assets/esri/
+*/assets/esri/
 package-lock.json
 .parcel-cache/
 

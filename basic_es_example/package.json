@@ -1,0 +1,58 @@
+{
+    "name": "arcgis-js-api-test-es",
+    "author": "Brian Wilson bwilson@co.clatsop.or.us",
+    "version": "1.0.0",
+    "description": "ArcGIS JS 4.x API test, ES example",
+    "private": false,
+    "homepage": "https://delta.co.clatsop.or.us/apps/arcgis-js-api/",
+    "scripts": {
+        "copy": "cp -R ./node_modules/@arcgis/core/assets .",
+        "start": "parcel serve index.html --open",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "parcel build index.html -d build -o default.htm  --public-url ./ --experimental-scope-hoisting --detailed-report",
+        "clean": "rm -rf node_modules/ dist/"
+    },
+    "keywords": [],
+    "license": "MIT",
+    "dependencies": {
+        "@arcgis/core": "^4.23",
+        "dgrid": "^1.3.3",
+        "esri": "0.0.1-security",
+        "esri-loader": "^2.16.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.17",
+        "@babel/plugin-proposal-class-properties": "^7.12.13",
+        "@babel/plugin-proposal-object-rest-spread": "^7.12.13",
+        "@babel/plugin-proposal-private-methods": "^7.12.13",
+        "@babel/plugin-transform-object-assign": "^7.2.0",
+        "@babel/preset-env": "^7.12.17",
+        "eslint": "^7.20.0",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-node": "^6.0.1",
+        "eslint-plugin-promise": "^3.8.0",
+        "eslint-plugin-standard": "^3.1.0",
+        "parcel": "^2.5.0"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-object-rest-spread",
+            [
+                "@babel/plugin-proposal-class-properties",
+                {
+                    "loose": true
+                }
+            ],
+            [
+                "@babel/plugin-proposal-private-methods",
+                {
+                    "loose": true
+                }
+            ]
+        ]
+    }
+}
