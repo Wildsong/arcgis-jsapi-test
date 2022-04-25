@@ -1,3 +1,9 @@
+dist/
+build/
+assets/esri/
+package-lock.json
+.parcel-cache/
+
 # Logs
 logs
 *.log
