@@ -13,8 +13,8 @@ a {
     margin: 0;
     height: 480px;
     width: 640px;
-    color: #e3e76a;
-    background-color: rgb(120, 191, 120);
+    color: lightgray;
+    background-color: white;
 }
 
 .map-section {

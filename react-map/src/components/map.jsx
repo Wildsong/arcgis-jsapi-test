@@ -1,31 +1,40 @@
 import React, {useEffect} from 'react'  // eslint-disable-line no-unused-vars
-import esriConfig from '@arcgis/core/config'
 import Map from '@arcgis/core/Map'
 import MapView from '@arcgis/core/views/MapView'
-import {api_key} from '../../secrets'
+import WebMap from "@arcgis/core/WebMap"
+import Basemap from "@arcgis/core/Basemap"
+import BasemapGallery from "@arcgis/core/widgets/BasemapGallery"
 
-const CCMap = () => {
-    esriConfig.apiKey = api_key;
-    const map = new Map({ basemap: 'topo-vector' });
+const CCMap = (props) => {
+    //const map = new Map({ basemap: 'topo-vector' });
 
-    const loadMap = () => {
+    const webmap = new WebMap({
+        portalItem: {
+            id: props.mapId
+        }
+    })
+
+    useEffect(() => {
         const view = new MapView({
             container: "viewDiv",
-            map: map,
+            map: webmap,
             center: [-123.835, 46.17], // Clatsop County, Oregon
             zoom: 10,
             constraints: {
                 rotationEnabled: false
             }
-        });    
-    }
-    useEffect(() => {
-        loadMap(); // has to happen after viewDiv is rendered
+        });
+        const basemapGallery = new BasemapGallery({
+            view: view
+        })    
+        view.ui.add(basemapGallery), {
+            position: "top-right",
+        }
     }, []);
 
     return (
         <>
-        API key = {api_key} <br />
+        webmap id = {props.mapId} <br />
         <div id="viewDiv"></div>
         </>
     )
