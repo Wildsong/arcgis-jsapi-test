@@ -7,18 +7,12 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Debug parcel app",
+            "name": "Debug react-map",
             "url": "http://localhost:1234",
             "webRoot": "${workspaceFolder}",
             "sourceMapPathOverrides": {
                 "/__parcel_source_root/*": "${webRoot}/*"
-            },
-            "pathMappings": [
-                {
-                    "url": "http://localhost:8080/__parcel_source_root/src",
-                    "path": "${workspaceFolder}/client/src"
-                }
-            ]
+            }
         }
     ]
 }
