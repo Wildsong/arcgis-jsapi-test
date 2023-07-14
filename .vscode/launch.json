@@ -7,9 +7,9 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Debug react-map",
+            "name": "Debug javascript app",
             "url": "http://localhost:1234",
-            "webRoot": "${workspaceFolder}",
+            "webRoot": "${workspaceFolder}/react-map",
             "sourceMapPathOverrides": {
                 "/__parcel_source_root/*": "${webRoot}/*"
             }
